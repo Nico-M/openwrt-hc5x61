@@ -32,11 +32,12 @@ jobs:
           libncurses5-dev unzip gawk liblzma-dev zlib1g-dev ccache u-boot-tools
 
       # Runs a single command using the runners shell
-      - name: buil 
+      - name: build 
         run: make
+        
       - name : Upload packages
         uses: actions/upload-artifact@master
         if: always()
         with:
-         name: Padavan-packages
-         path: /opt/images
+         name: oopenwrt-ramips-mt7620a-hiwifi-hc5761-squashfs-sysupgrade.bin
+         path: openwrt-ramips/bin
